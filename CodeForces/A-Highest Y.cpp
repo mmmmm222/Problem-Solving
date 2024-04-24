@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 #define ln "\n"
 typedef  long long ll;
-using namespace std;f
+using namespace std;
 
 const long long Max = 1e8+5;
 // const int shift = 1e6;
