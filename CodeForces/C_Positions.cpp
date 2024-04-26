@@ -3,7 +3,7 @@
 
 #include <bits/stdc++.h>
 #define ln "\n"
-typedef  long long ll;
+typedef long long ll;
 using namespace std;
 
 // const long long Max = 1e8+5;
@@ -11,70 +11,33 @@ using namespace std;
 // ll prefix[Max];
 // queue<int> q;
 
-void solve() {
-    int n; cin>>n;
-    vector<int> arr(n);
-    for(int i=0; i<n; i++) {
+void solve()
+{
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
         cin >> arr[i];
-    }
-    sort(arr.begin(), arr.end());
-    for(int i = 0; i<n/2; i++) {
-        cout << arr[i] <<" ";
-    }
-    for(int i =(n/2)-1; i>=0; i--) {
-        cout << arr[i] <<" ";
-    }
-    cout << ln;
-    reverse(arr.begin(), arr.end());
-    for(int i =0; i<n/2; i++) {
-        cout << arr[i] <<" ";
-    }
-    for(int i =(n/2)-1; i>=0; i--) {
-        cout << arr[i] <<" ";
+        if (arr[i] <= 10)
+        {
+            cout << "A[" << i << "] = " << arr[i] << ln;
+        }
     }
 }
 
-
-
-
-
-void Main() {
+void Main()
+{
     int t = 1;
     // cin>>t;
-    while(t--) {
+    while (t--)
+    {
         solve();
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int main(){
+int main()
+{
 
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -87,6 +50,6 @@ int main(){
     freopen("errors.txt", "w", stderr);
 #endif
     //--------------------
-        // int t;cin>>t;
+    // int t;cin>>t;
     Main();
 }

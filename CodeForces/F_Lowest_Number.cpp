@@ -12,25 +12,17 @@ using namespace std;
 // queue<int> q;
 
 void solve() {
-    int n; cin>>n;
-    vector<int> arr(n);
-    for(int i=0; i<n; i++) {
-        cin >> arr[i];
+    int n , mnn = WINT_MAX;cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+        mnn = min(mnn , arr[i]);
     }
-    sort(arr.begin(), arr.end());
-    for(int i = 0; i<n/2; i++) {
-        cout << arr[i] <<" ";
-    }
-    for(int i =(n/2)-1; i>=0; i--) {
-        cout << arr[i] <<" ";
-    }
-    cout << ln;
-    reverse(arr.begin(), arr.end());
-    for(int i =0; i<n/2; i++) {
-        cout << arr[i] <<" ";
-    }
-    for(int i =(n/2)-1; i>=0; i--) {
-        cout << arr[i] <<" ";
+    for(int i =0; i<n; i++) {
+        if(arr[i] == mnn){
+            cout << mnn <<" " << i+1;
+            return;
+        }
     }
 }
 

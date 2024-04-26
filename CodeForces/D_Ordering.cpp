@@ -12,30 +12,23 @@ using namespace std;
 // queue<int> q;
 
 void solve() {
-    int n; cin>>n;
-    vector<int> arr(n);
-    for(int i=0; i<n; i++) {
-        cin >> arr[i];
+    int n;cin>>n;
+    vector<int> v(n);
+    for(int i = 0; i<n; i++) {
+        cin >> v[i];
     }
-    sort(arr.begin(), arr.end());
-    for(int i = 0; i<n/2; i++) {
-        cout << arr[i] <<" ";
-    }
-    for(int i =(n/2)-1; i>=0; i--) {
-        cout << arr[i] <<" ";
+    sort(v.begin() , v.end());
+    for(int i = 0; i<n; i++) {
+        cout << v[i]<<" ";
     }
     cout << ln;
-    reverse(arr.begin(), arr.end());
-    for(int i =0; i<n/2; i++) {
-        cout << arr[i] <<" ";
+    for(int i = n -1; i>=0; i--) {
+        cout << v[i] <<" ";
     }
-    for(int i =(n/2)-1; i>=0; i--) {
-        cout << arr[i] <<" ";
-    }
+
+
+
 }
-
-
-
 
 
 void Main() {
