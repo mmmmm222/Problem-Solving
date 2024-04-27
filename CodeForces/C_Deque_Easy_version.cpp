@@ -1,0 +1,105 @@
+/*                                              بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+                    قَالَ رَبِّ اشْرَحْ لِي صَدْرِي (25) وَيَسِّرْ لِي أَمْرِي (26) وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي (27) يَفْقَهُوا قَوْلي             */
+
+#include <bits/stdc++.h>
+#define ln "\n"
+typedef  long long ll;
+using namespace std;
+
+// const long long Max = 1e8+5;
+// const int shift = 1e6;
+// ll prefix[Max];
+// queue<int> q;
+deque<int> dq;
+
+void solve() {
+    string s;cin>>s;
+    if(s == "push_back")
+    {
+        int n;cin>>n;
+        dq.push_back(n);
+    }
+    else if(s == "push_front")
+    {
+        int n;cin>>n;
+        dq.push_front(n);
+    }
+    else if(s == "pop_front")
+    {
+        dq.pop_front();
+    }
+    else if(s == "pop_back")
+    {
+        dq.pop_back();
+    }
+    else if(s == "front")
+    {
+        cout << dq.front()<< ln;
+    }
+    else if(s == "back")
+    {
+        cout << dq.back() << ln;
+    }
+    else if(s == "print")
+    {
+        int n;cin>>n;
+        cout << dq[n-1]<< ln;
+    }
+}
+
+
+
+
+
+void Main() {
+    int t = 1;
+    cin>>t;
+    while(t--) {
+        solve();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(){
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    cout << fixed << setprecision(1);
+
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    freopen("errors.txt", "w", stderr);
+#endif
+    //--------------------
+        // int t;cin>>t;
+    Main();
+}
