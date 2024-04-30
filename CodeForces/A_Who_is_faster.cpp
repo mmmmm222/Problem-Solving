@@ -1,0 +1,70 @@
+/*                                      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+قَالَ رَبِّ اشْرَحْ لِي صَدْرِي (25) وَيَسِّرْ لِي أَمْرِي (26) وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي (27) يَفْقَهُوا قَوْلي             */
+
+#include <bits/stdc++.h>
+#define ln "\n"
+typedef  long long ll;
+using namespace std;
+
+void solve() {
+    int temp,tamer,cnt=0;
+    cin>>tamer;
+    for(int i=0; i<3; i++) {
+        cin>>temp;
+        if(temp>tamer)
+            cnt++;
+    }
+    cout<<cnt<<ln;
+}
+
+void Main() {
+    int t = 1;
+    cin>>t;
+    while(t--) {
+        solve();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(){
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    cout << fixed << setprecision(12);
+
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    freopen("errors.txt", "w", stderr);
+#endif
+    //--------------------
+    // int t;cin>>t;
+    Main();
+}
