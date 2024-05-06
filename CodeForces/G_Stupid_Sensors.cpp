@@ -6,47 +6,40 @@
 typedef long long ll;
 using namespace std;
 
-ll arr[200005], par[200005];
+int x= 1004;
+
+ll par[200005] ,pre[200005];
 
 void solve()
 {
-    memset(par, 0, sizeof par);
-    memset(arr, 0, sizeof arr);
-    int n = 0;
-    cin >> n;
-    for (int i = 1; i <= n; i++)
-    {
-        cin >> arr[i];
+    ll n,k,q,rmx=200005;cin>>n>>k>>q;
+    for(int i=1; i<=n;i++) {
+        ll l,r;cin>>l>>r;
+        par[l]++,par[r+1]--;        //put one at the position where the sensor start and -1 at the pos where it finish then do prefix sum
+        // rmx = max(rmx ,r);
     }
-    if (arr[1] > 200001 || arr[1] != n)
-    {
-        cout << "NO" << ln;
-        return;
+    for(int i=1; i<=rmx; i++) {
+        par[i]+=par[i-1];           //prefix sum to get how many sensors cover the point
     }
-    for (int i = 1; i <= n; i++)
-    {
-        par[1]++;
-        par[arr[i] + 1]--;
+    for(int i=1; i<=rmx; i++) {
+        if(par[i]>=k)   // i want to know if this point will be ok or not
+            pre[i]++;
     }
-    for (int i = 1; i <= n; i++)
-    {
-        par[i + 1] += par[i];
+    for(int i=1; i<=rmx+1; i++) {       //to avoide time limit i do prefix then get l ,r then get the summation of the (ok) points between them
+        pre[i]+=pre[i-1];
     }
-    for (int i = 0; i <= n; i++)
-    {
-        if (arr[i] != par[i])
-        {
-            cout << "NO" << ln;
-            return;
-        }
+    while(q--) {
+        int l,r;cin>>l>>r;
+        ll ans=0;
+        ans = pre[r] - pre[l-1];
+        cout<<ans<<ln;
     }
-    cout << "YES" << ln;
 }
 
 void Main()
 {
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();
